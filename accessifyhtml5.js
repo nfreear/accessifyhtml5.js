@@ -21,7 +21,7 @@ var AccessifyHTML5 = function (defaults, more_fixes) {
   error = result.fail,
   fix, elems, attr, value, key, obj, i, mo, by_match, el_label,
   ATTR_SECURE = new RegExp("aria-[a-z]+|role|tabindex|title|alt|data-[\\w-]+|lang|"
-    + "style|maxlength|placeholder|pattern|required|type|target|accesskey|longdesc"),
+    + "style|for|maxlength|placeholder|pattern|required|type|target|accesskey|longdesc"),
   ID_PREFIX = "acfy-id-",
   n_label = 0,
   Doc = document;
@@ -103,8 +103,9 @@ var AccessifyHTML5 = function (defaults, more_fixes) {
                 continue;
               }
 
-              // Connect up 'aria-labelledby'. //Question: do we accept poor spelling/ variations?
-              by_match = attr.match(/(describ|label)l?edby/);
+              // Connect up 'aria-labelledby'.
+              // Note: we no longer accept poor spelling.
+              by_match = attr.match(/(for|aria-labelledby|aria-describedby)$/);
               if (by_match) {
                 try {
                   el_label = Doc.querySelector(value); //Not: elems[i].querySel()
@@ -124,7 +125,7 @@ var AccessifyHTML5 = function (defaults, more_fixes) {
                 }
 
                 value = el_label.id;
-                attr = "aria-" + ("label" === by_match[1] ? "labelledby" : "describedby");
+                //attr = by_match[1];
 
                 n_label++;
               }
