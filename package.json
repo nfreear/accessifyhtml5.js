@@ -1,0 +1,10 @@
+{
+  "name": "accessifyhtml5",
+  "version": "1.0.0",
+  "description": "While most browsers work all right with the new semantic elements of HTML5, they dont add the ARIA accessibility attributes that the specification demands. This small JavaScript adds those attributes to enhance accessibility of web sites.",
+  "main": "accessifyhtml5.js",
+  "browser": "accessifyhtml5.js",
+  "repository": "https://github.com/BEllis/accessifyhtml5.js.git",
+  "author": "Eric Eggert (added to NPM by Ben Ellis)",
+  "license": "MIT"
+}
