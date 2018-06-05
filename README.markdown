@@ -101,4 +101,3 @@ This project is [MIT licensed](http://outline.mit-license.org/).
 * Eric Eggert
 * Twitter: @yatil
 * Blog: http://yatil.net
-* Workshops: http://modernwebaccessibility.com

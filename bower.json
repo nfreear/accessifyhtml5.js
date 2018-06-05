@@ -1,0 +1,26 @@
+{
+  "name": "accessifyhtml5",
+  "main": "accessifyhtml5.js",
+  "homepage": "https://github.com/BEllis/accessifyhtml5.js",
+  "description": "While most browsers work all right with the new semantic elements of HTML5, they dont add the ARIA accessibility attributes that the specification demands. This small JavaScript adds those attributes to enhance accessibility of web sites.",
+  "keywords": [
+    "accessibility",
+    "html5",
+    "screenreader",
+    "screen",
+    "reader",
+    "aria",
+    "role"
+  ],
+  "authors": [
+    "Eric Eggert (added to Bower by Ben Ellis)"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
