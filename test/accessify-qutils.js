@@ -1,18 +1,18 @@
-/*
+/*!
  Accessifyhtml5.js - Test utilities.
 
  (Choice of 'q' as the global is a bit random! @nfreear)
 */
-/*jslint browser: true, indent: 2 */
+/* jslint browser: true, indent: 2 */
 
-"use strict";
+'use strict';
 
-var q = {
-  ///ex_ID: 'acfy-id-0',
+var q = window.q = {
+  /// ex_ID: 'acfy-id-0',
 
   // Utilities: these need to exist after - see ::tearDown().
   log: function (s) {
-    if (typeof console === 'object') console.log(arguments.length > 1 ? arguments : s)
+    if (typeof console === 'object') console.log(arguments.length > 1 ? arguments : s);
   },
   select: function (selector) {
     return document.querySelector(selector);
@@ -22,9 +22,9 @@ var q = {
   },
   addScript: function (js, pos, id) {
     id = pos && !pos.match(/head|body/) ? pos : id;
-    pos = 'head' === pos ? pos : 'body';
-    var h = document.getElementsByTagName(pos)[0],
-      s = document.createElement('script');
+    pos = pos === 'head' ? pos : 'body';
+    var h = document.getElementsByTagName(pos)[0];
+    var s = document.createElement('script');
     s.type = 'text/javascript';
     s.src = js;
     if (id) {
@@ -34,10 +34,9 @@ var q = {
   },
   onload: function (fn) {
     var w = window;
-    if (w.addEventListener) { //W3C standard
-      w.addEventListener('load', fn, false); //NB **not** 'onload'
-    }
-    else if (w.attachEvent) { //Microsoft
+    if (w.addEventListener) { // W3C standard
+      w.addEventListener('load', fn, false); // NB **not** 'onload'
+    } else if (w.attachEvent) { // Microsoft
       w.attachEvent('onload', fn);
     }
   }
@@ -45,8 +44,8 @@ var q = {
 
 // If requested load the minified Javascript:
 // bjs2.html?min=1
-if (document.location.search.match(/[&\?]min/)) {
-  q.addScript("../accessifyhtml5.min.js", "acfy-js");
+if (document.location.search.match(/[&?]min/)) {
+  q.addScript('../accessifyhtml5.min.js', 'acfy-js');
 } else {
-  q.addScript("../accessifyhtml5.js", "acfy-js");
+  q.addScript('../accessifyhtml5.js', 'acfy-js');
 }

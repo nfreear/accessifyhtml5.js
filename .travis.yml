@@ -1,0 +1,21 @@
+# https://travis-ci.org/nfreear/cookie-notice
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+
+language: node_js
+
+node_js: 8
+
+git:
+  depth: 8
+
+cache:
+  directories:
+    - node_modules ## NPM packages.
+
+## Just use defaults.
+
+# install: npm install
+
+# script: npm test
+
+## End.
